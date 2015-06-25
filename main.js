@@ -1,13 +1,11 @@
-//请不要尝试维护这段代码，除非您真的知道您在做什么，并且有一个很好的方案。 ----wfjsw
-//total_hours_wasted_here = 4
+// 请不要尝试维护这段代码，除非您真的知道您在做什么，并且有一个很好的方案。 ----wfjsw
+// 如果您真的维护了这段代码，并意识到这真的是浪费时间，请增加下面的计数器，以警示后人：
+// total_hours_wasted_here = 7
 
 var Telegram = require('telegram-bot');
-var tg = new Telegram('<Give me your token>'); //TODO: Make this progress automatic.
-var sessions = {
-    "file_android": "",
-    "file_ios": "",
-    "file_desktop": ""
-    };
+var tg = new Telegram('<Give me your token>'); // TODO: Make this automaticly.
+var admin_password = "here_is_your_admin_password_without_space";
+var sessions = {};
 
 
 tg.on('message', function(msg) {
@@ -111,43 +109,52 @@ tg.on('message', function(msg) {
                 });
                 break;
             default:
-                var actionregex = /^\/set(android|ios|desktop){1}\s(.+)$/;
-                if (actionregex.test(msg.text)) {
-                    var matchresult = actionregex.exec(msg.text);
-                    switch(matchresult[1]) {
-                        case "android":
-                            sessions.file_android = matchresult[2];
-                            tg.sendMessage({
-                                text: "Upload Android OK",
-                                chat_id: msg.chat.id
-                            });
-                            break;
-                        case "ios":
-                            sessions.file_ios = matchresult[2];
-                            tg.sendMessage({
-                                text: "Upload iOS OK",
-                                chat_id: msg.chat.id
-                            });
-                            break;
-                        case "desktop":
-                            sessions.file_desktop = matchresult[2];
-                            tg.sendMessage({
-                                text: "Upload Desktop OK",
-                                chat_id: msg.chat.id
-                            });
-                            break;
-                        default:
-                            tg.sendMessage({
-                                text: "程式错误，请检查您的输入。",
-                                chat_id: msg.chat.id
-                            });
+                var setaction = /^\/set(android|ios|desktop){1}\s(\S+)\s(\S+)$/;
+                if (setaction.test(msg.text)) {
+                    var matchresult = setaction.exec(msg.text);
+                    if (matchresult[3]==admin_password){
+                        switch(matchresult[1]) {
+                            case "android":
+                                sessions.file_android = matchresult[2];
+                                tg.sendMessage({
+                                    text: "Update Android OK",
+                                    chat_id: msg.chat.id
+                                });
+                                break;
+                            case "ios":
+                                sessions.file_ios = matchresult[2];
+                                tg.sendMessage({
+                                    text: "Update iOS OK",
+                                    chat_id: msg.chat.id
+                                });
+                                break;
+                            case "desktop":
+                                sessions.file_desktop = matchresult[2];
+                                tg.sendMessage({
+                                    text: "Update Desktop OK",
+                                    chat_id: msg.chat.id
+                                });
+                                break;
+                            default:
+                                tg.sendMessage({
+                                    text: "程式错误，请检查您的输入。",
+                                    chat_id: msg.chat.id
+                                });
 
+                        }
+                    }
+                    else
+                    {
+                        tg.sendMessage({
+                            text: "密码错误，请检查您的输入。",
+                            chat_id: msg.chat.id
+                        });
                     }
                 }
                 else
                 {
                     tg.sendMessage({
-                    text: "对不起我不知道您在说什么，请回复/help获取帮助，或回复/contact来找个人类聊天('・ω・')",
+                    text: "对不起，但我无法理解您在说什么，请回复 /help 获取帮助，或回复 /contact 来找个人类聊天('・ω・')",
                     chat_id: msg.chat.id
                     });
                 }
@@ -156,5 +163,6 @@ tg.on('message', function(msg) {
     //End of the sub process.
 });
 
-console.log("Rocket is ready to launch.")
+console.log("卫星准备发射")
 tg.start();
+console.log("卫星成功发射")
