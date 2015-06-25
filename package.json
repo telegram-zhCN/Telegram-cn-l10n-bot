@@ -1,0 +1,13 @@
+{
+  "name": "Telegram-cn-l10n-bot",
+  "version": "0.1.0",
+  "description": "This is a l10n file distributing bot in Telegram. Work for Telegram-zhCN project.",
+  "author": "Jianshu Wang",
+  "bin": {
+    "cnbot": "./main.js"
+  },
+  "dependencies": {
+    "telegram-bot": "^0.1.0"
+  },
+  "private": true
+}
