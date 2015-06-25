@@ -19,15 +19,17 @@ tg.on('message', function(msg) {
             chat_id: msg.chat.id
         });
         tg.sendMessage({
-            text: msg.document.file_id,,
+            text: msg.document.file_id,
             chat_id: msg.chat.id
         });
+        console.log("File_id sent. ")
         return;
     }
     //End of the sub process.
 
     //Process Commands.
     if (msg.text) {
+        console.log("Get Text Message: " + msg.text);
         switch(msg.text)
         {
             case "/start":
@@ -162,4 +164,5 @@ tg.on('message', function(msg) {
     //End of the sub process.
 });
 
+console.log("Rocket is ready to launch.")
 tg.start();
