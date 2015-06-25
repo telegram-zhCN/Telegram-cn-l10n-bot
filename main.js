@@ -83,7 +83,7 @@ tg.on('message', function(msg) {
             case "/getdesktop":
                 if (sessions.file_desktop!="") {
                     tg.sendMessage({
-                        text: "接下来将向您发送 桌面 版的语言文件。请点击下载之后将其保存到硬盘上。点击标题栏上的“Settings(设置)”，下拉找到“Change Language(更换语言)”按住键盘上的Alt+Shift并点击它，在打开的对话框中找到刚刚下载的“Localizable.strings”文件并打开。",
+                        text: "接下来将向您发送 桌面 版的语言文件。请点击下载之后将其保存到硬盘上。点击标题栏上的“Settings(设置)”，下拉找到“Change Language(更换语言)”按住键盘上的Alt+Shift并点击它，在打开的对话框中找到刚刚下载的“strings”文件并打开。",
                         chat_id: msg.chat.id
                     });
                     tg.sendDocument({
