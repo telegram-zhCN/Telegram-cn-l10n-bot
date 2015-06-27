@@ -90,7 +90,7 @@ tg.on('message', function(msg) {
             case "/getdesktop":
                 if (sessions.file_desktop) {
                     tg.sendMessage({
-                        text: "本次向您发送的是 桌面 版的语言文件。请点击下载之后将其保存到硬盘上。点击标题栏上的“Settings(设置)”，下拉找到“Change Language(更换语言)”按住键盘上的Alt+Shift并点击它，在打开的对话框中找到刚刚下载的“strings”文件并打开。",
+                        text: "本次向您发送的是 桌面版 的语言文件。请点击下载之后将其保存到硬盘上，解压。点击标题栏上的“Settings(设置)”，下拉找到“Change Language(更换语言)”按住键盘上的Alt+Shift并点击它，在打开的对话框中找到刚刚解压的“桌面版汉化包.strings”文件并打开。",
                         reply_to_message_id: msg.message_id,
                         chat_id: msg.chat.id
                     });
