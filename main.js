@@ -47,7 +47,7 @@ tg.on('message', function(msg) {
                 break;
             case "/getandroid@" + myid.username:
             case "/getandroid":
-                if (sessions.file_android!="") {
+                if (sessions.file_android) {
                     tg.sendMessage({
                         text: "本次向您发送的是 Android 版的语言文件。请点击下载之后触摸该文件的右上角三个点，选择“Apply Localization File（应用本地化文件）”，然后选择“简体中文”。",
                         reply_to_message_id: msg.message_id,
@@ -68,7 +68,7 @@ tg.on('message', function(msg) {
                 break;
             case "/getios@" + myid.username:
             case "/getios":
-                if (sessions.file_ios!="") {
+                if (sessions.file_ios) {
                     tg.sendMessage({
                         text: "本次向您发送的是 iOS 版的语言文件。请点击下载之后触摸该文件，选择“Apply Localization File（应用本地化文件）”，然后选择“简体中文”。",
                         reply_to_message_id: msg.message_id,
@@ -88,7 +88,7 @@ tg.on('message', function(msg) {
                 break;
             case "/getios@" + myid.username:
             case "/getdesktop":
-                if (sessions.file_desktop!="") {
+                if (sessions.file_desktop) {
                     tg.sendMessage({
                         text: "本次向您发送的是 桌面 版的语言文件。请点击下载之后将其保存到硬盘上。点击标题栏上的“Settings(设置)”，下拉找到“Change Language(更换语言)”按住键盘上的Alt+Shift并点击它，在打开的对话框中找到刚刚下载的“strings”文件并打开。",
                         reply_to_message_id: msg.message_id,
