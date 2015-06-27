@@ -1,6 +1,6 @@
 // 请不要尝试维护这段代码，除非您真的知道您在做什么，并且有一个很好的方案。 ----wfjsw
 // 如果您真的维护了这段代码，并意识到这真的是浪费时间，请增加下面的计数器，以警示后人：
-// total_hours_wasted_here = 7
+// total_hours_wasted_here = 8
 
 var Telegram = require('telegram-bot');
 var tg = new Telegram('<Give me your token>'); // TODO: Make this automaticly.
