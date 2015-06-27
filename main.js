@@ -28,7 +28,7 @@ tg.on('message', function(msg) {
 
     //Process Commands.
     if (msg.text) {
-        console.log("Get Text Message From User " + msg.chat.username + " Or Group " + msg.chat.title + " : " + msg.text);
+        console.log("Text Message From User " + msg.from.id + " : " + msg.from.username + " Group " + msg.chat.id + " : " + msg.chat.title + " and content: " + msg.text);
         switch(msg.text)
         {
             case "/start@tgcnlang_bot":
