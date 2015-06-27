@@ -31,21 +31,21 @@ tg.on('message', function(msg) {
         console.log("Get Text Message From User " + msg.chat.username + " Or Group " + msg.chat.title + " : " + msg.text);
         switch(msg.text)
         {
-            case "/start@" + myid.username:
+            case "/start@tgcnlang_bot":
             case "/start":
                 tg.sendMessage({
                     text: "您好，欢迎访问 telegram-zhCN 项目的中文支持机器人。\n我的使命是向您发布最新的 Telegram 翻译文件，同时为您提供基础支持。\n您可以使用如下命令：\n\n/help：获取本帮助文档\n/getandroid：获取Android版翻译\n/getios：获取iOS版翻译\n/getdesktop：获取Desktop版翻译\n/contact：获取我主人的联系方式，如果您想提出一些问题，或只是为了交个朋友闲聊天w\n/contrib：获取关于参与该项目的信息\n\n请注意 Telegram 软件一直在为实现更多功能而更新，未来我将担负起通知软件更新的职责，但当前您只能通过访问 http://telegram-china.org 网站来获取最新版软件。软件更新后，请回到我这里来查阅新的翻译文件。",
                     chat_id: msg.chat.id
                 });
                 break;
-            case "/help@" + myid.username:
+            case "/help@tgcnlang_bot":
             case "/help":
                 tg.sendMessage({
                     text: "您好，欢迎访问 telegram-zhCN 项目的中文支持机器人。\n我的使命是向您发布最新的 Telegram 翻译文件，同时为您提供基础支持。\n您可以使用如下命令：\n\n/help：获取本帮助文档\n/getandroid：获取Android版翻译\n/getios：获取iOS版翻译\n/getdesktop：获取Desktop版翻译\n/contact：获取我主人的联系方式，如果您想提出一些问题，或只是为了交个朋友闲聊天w\n/contrib：获取关于参与该项目的信息\n\n请注意 Telegram 软件一直在为实现更多功能而更新，未来我将担负起通知软件更新的职责，但当前您只能通过访问 http://telegram-china.org 网站来获取最新版软件。软件更新后，请回到我这里来查阅新的翻译文件。",
                     chat_id: msg.chat.id
                 });
                 break;
-            case "/getandroid@" + myid.username:
+            case "/getandroid@tgcnlang_bot":
             case "/getandroid":
                 if (sessions.file_android) {
                     tg.sendMessage({
@@ -66,7 +66,7 @@ tg.on('message', function(msg) {
                     });
                 }
                 break;
-            case "/getios@" + myid.username:
+            case "/getios@tgcnlang_bot":
             case "/getios":
                 if (sessions.file_ios) {
                     tg.sendMessage({
@@ -86,7 +86,7 @@ tg.on('message', function(msg) {
                     });
                 }
                 break;
-            case "/getios@" + myid.username:
+            case "/getdesktop@tgcnlang_bot":
             case "/getdesktop":
                 if (sessions.file_desktop) {
                     tg.sendMessage({
@@ -106,14 +106,14 @@ tg.on('message', function(msg) {
                     });
                 }
                 break;
-            case "/contact@" + myid.username:
+            case "/contact@tgcnlang_bot":
             case "/contact":
                 tg.sendMessage({
                     text: "我的作者： @wfjsw , 对各类问题有意见尽管来提吧w\n项目成员： @cD72082D948D199F , @wfjsw , @brainbush\n当然，聪明的人都会去GitHub瞅一眼，发个issue什么的，\n我们的团队地址： https://github.com/telegram-zhCN \nTelegram 中国网站： http://telegram-china.org/",
                     chat_id: msg.chat.id
                 });
                 break;
-            case "/contrib@" + myid.username:
+            case "/contrib@tgcnlang_bot":
             case "/contrib":
                 tg.sendMessage({
                     text: "想要加入这个项目？\n先来参观一下我们的GitHub团队吧： https://github.com/telegram-zhCN \n如果您有意向加入，请联系 @wfjsw 或 @cD72082D948D199F ，我们一直在这里等着您。",
