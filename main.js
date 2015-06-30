@@ -222,7 +222,9 @@ tg.on('message', function(msg) {
                                         text: '订阅更新：\n' + matchresult[2] + '\n\n回复 /unsubscribe 取消订阅。',
                                         chat_id: subscriber.subscriber[i]
                                     });
+                                    console.log("Broadcasted " + subscriber.subscriber[i]);
                                 }
+                                break;
                             default:
                                 tg.sendMessage({
                                     text: "程式错误，请检查您的输入。",
