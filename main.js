@@ -217,7 +217,7 @@ tg.on('message', function(msg) {
                                     text: "We will broadcast '" + matchresult[2] + "' to all subscribers. ",
                                     chat_id: msg.chat.id
                                 });
-                                for(var i = subscriber.subscriber - 1; i >= 0; i--) {
+                                for(var i = subscriber.subscriber.length - 1; i >= 0; i--) {
                                     tg.sendMessage({
                                         text: '订阅更新：\n' + matchresult[2] + '\n\n回复 /unsubscribe 取消订阅。',
                                         chat_id: subscriber.subscriber[i]
